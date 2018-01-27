@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+ {% block body %}
+     {{ form_start(form) }}
+     {{ form_widget(form) }}
+     <button>Envoyer</button>
+     {{ form_end(form) }}
+     <table class="table table-striped">
+         <thead>
+         <th>Titre</th>
+         <th>Publié</th>
+         <th>Action</th>
+         </thead>
+         <tbody>
+         {% for post in posts %}
+             <tr>
+                 <td>{{ post.title }}</td>
+                 <td>{{ post.published }}</td>
+                 <td></td>
+             </tr>
+         {% endfor %}
+         </tbody>
+     </table>
+ {% endblock %}
